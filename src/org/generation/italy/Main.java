@@ -28,34 +28,24 @@ public class Main {
 		
 		if(candidati.containsKey(voto))
 		{
+			candidati.put(voto, candidati.get(voto)+1);
+		}		
+		else 
+		{
 			System.out.println("Candidato non esistente");
 			risposta="si";
-		}		
-		else if(voto.equals("pippo"))
-		{
-			candidati.put("pippo", candidati.get(voto)+1);
+			continue;
 		}
-		else if(voto.equals("pluto"))
-		{
-			candidati.put("pluto", candidati.get(voto)+1);
-		}
-		else if(voto.equals("topolino"))	
-		{
-			candidati.put("topolino", candidati.get(voto)+1);
-		}
-		else if(voto.equals("paperino"))
-		{
-			candidati.put("paperino", candidati.get(voto)+1);
-		}
-		
-		System.out.println("Candidati disponibili:");
-		for(String cand:candidati.keySet())
-			System.out.println(cand+" "+candidati.get(voto));
-		
+
 		System.out.println("Vuoi inserire un nuovo voto(si/no)?");
 		risposta=sc.nextLine();
 	}while(risposta.equals("si"));
 		
+	System.out.println("RISULTATI:");
+	for(String cand:candidati.keySet())
+		System.out.println(cand+" "+candidati.get(voto));
+	
+	
 	sc.close();	
 	}
 
